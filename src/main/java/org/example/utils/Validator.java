@@ -32,7 +32,7 @@ public class Validator {
         return pat.matcher(email).matches();
     }
 
-    public static boolean isValidPrice(Double price) {
+    public boolean isValidPrice(Double price) {
         // Check if price is null
         if (price == null) {
             return false; // Invalid if price is null
@@ -41,7 +41,7 @@ public class Validator {
         return price > 0;
     }
 
-    public static boolean isValidAveragePreparationTime(Duration averageTime) {
+    public boolean isValidAveragePreparationTime(Duration averageTime) {
         // Check if averageTime is null
         if (averageTime == null) {
             return false; // Invalid if averageTime is null
