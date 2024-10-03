@@ -1,17 +1,28 @@
 package org.example.utils;
 
-
 import org.example.dto.MenuItemDto;
 
-import java.time.LocalDateTime;
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 public class MenuGenerator {
-    private static final String[] NAMES = {"Spaghetti Bolognese", "Margherita Pizza", "Caesar Salad", "Grilled Salmon", "Chicken Tikka Masala", "Beef Tacos", "Vegetable Stir Fry", "Chocolate Lava Cake"};
+    private static final String[] NAMES = {
+            "Spaghetti Bolognese", "Margherita Pizza", "Caesar Salad", "Grilled Salmon",
+            "Chicken Tikka Masala", "Beef Tacos", "Vegetable Stir Fry", "Chocolate Lava Cake"
+    };
 
-    private static final String[] DESCRIPTIONS = {"A classic Italian pasta dish with rich meat sauce.", "A traditional pizza topped with fresh mozzarella and basil.", "Crisp romaine lettuce, croutons, and Caesar dressing.", "Succulent salmon grilled to perfection.", "A flavorful Indian curry with tender chicken pieces.", "Soft tortillas filled with seasoned beef and fresh toppings.", "A mix of colorful vegetables stir-fried in a savory sauce.", "A rich chocolate dessert with a molten center."};
+    private static final String[] DESCRIPTIONS = {
+            "A classic Italian pasta dish with rich meat sauce.",
+            "A traditional pizza topped with fresh mozzarella and basil.",
+            "Crisp romaine lettuce, croutons, and Caesar dressing.",
+            "Succulent salmon grilled to perfection.",
+            "A flavorful Indian curry with tender chicken pieces.",
+            "Soft tortillas filled with seasoned beef and fresh toppings.",
+            "A mix of colorful vegetables stir-fried in a savory sauce.",
+            "A rich chocolate dessert with a molten center."
+    };
 
     private static final Random random = new Random();
     private static Long idCounter = 1L; // Static counter for itemId
@@ -21,7 +32,7 @@ public class MenuGenerator {
         String name = NAMES[random.nextInt(NAMES.length)];
         String description = DESCRIPTIONS[random.nextInt(DESCRIPTIONS.length)];
         Double price = Math.round((10 + (50 - 10) * random.nextDouble()) * 100.0) / 100.0; // Random price between 10.00 and 50.00
-        LocalDateTime preparationTime = LocalDateTime.now().plusMinutes(random.nextInt(61)); // Random preparation time up to 60 minutes
+        Duration preparationTime = Duration.ofMinutes(random.nextInt(61)); // Random preparation time up to 60 minutes
 
         Long restaurantId = restaurantIdCounter++; // Assign a unique restaurant ID for each item (for demonstration)
         Long menuItemId = idCounter++; // Assign a unique restaurant ID for each item (for demonstration)
