@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class OrderDtoGenerator {
+public class OrderGenerator {
     private static final Random random = new Random();
     private static Long orderIdCounter = 1L; // Counter for order IDs
     private static final String[] ADDRESSES = {
