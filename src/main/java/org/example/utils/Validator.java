@@ -1,14 +1,11 @@
 package org.example.utils;
 
-import org.springframework.stereotype.Component;
 
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-@Component
 public class Validator {
-    private String cleanup(String data)
-    {
+    private String cleanup(String data) {
         return data.trim();
     }
 
@@ -26,16 +23,11 @@ public class Validator {
         return matcher.matches();
     }
 
-    public boolean isValidEmailAddress(String email)
-    {
-        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\."+
-                "[a-zA-Z0-9_+&*-]+)*@" +
-                "(?:[a-zA-Z0-9-]+\\.)+[a-z" +
-                "A-Z]{2,7}$";
+    public boolean isValidEmailAddress(String email) {
+        String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\." + "[a-zA-Z0-9_+&*-]+)*@" + "(?:[a-zA-Z0-9-]+\\.)+[a-z" + "A-Z]{2,7}$";
 
         Pattern pat = Pattern.compile(emailRegex);
-        if (email == null)
-            return false;
+        if (email == null) return false;
         return pat.matcher(email).matches();
     }
 }
