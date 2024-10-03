@@ -8,18 +8,21 @@ public class MenuItemDto {
     private String description;
     private Double price;
     private LocalDateTime preparationTime;
+    private Long restaurantId;
 
-
-    public MenuItemDto() {
-    }
-
-    public MenuItemDto(Long itemId, String name, String description, Double price, LocalDateTime preparationTime) {
+    public MenuItemDto(Long itemId, String name, String description, Double price, LocalDateTime preparationTime, Long restaurantId) {
         this.itemId = itemId;
         this.name = name;
         this.description = description;
         this.price = price;
         this.preparationTime = preparationTime;
+        this.restaurantId = restaurantId;
     }
+
+
+    public MenuItemDto() {
+    }
+
 
     public Double getPrice() {
         return price;
@@ -61,6 +64,15 @@ public class MenuItemDto {
     public void setPreparationTime(LocalDateTime preparationTime) {
         this.preparationTime = preparationTime;
     }
+
+    public Long getRestaurantId() {
+        return restaurantId;
+    }
+
+    public void setRestaurantId(Long restaurantId) {
+        this.restaurantId = restaurantId;
+    }
+
 
     @Override
     public String toString() {
