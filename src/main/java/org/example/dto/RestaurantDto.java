@@ -6,17 +6,11 @@ public class RestaurantDto {
     private Long restaurantId;
     private String name;
     private String address;
+    private List<MenuItemDto> menu;
+    private String mobile;
+    private String email;
 
-    @Override
-    public String toString() {
-        return "RestaurantDto{" +
-                "restaurantId=" + restaurantId +
-                ", name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", menu=" + menu +
-                ", mobile='" + mobile + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+    public RestaurantDto() {
     }
 
     public RestaurantDto(Long restaurantId, String name, String address, List<MenuItemDto> menu, String mobile, String email) {
@@ -27,10 +21,6 @@ public class RestaurantDto {
         this.mobile = mobile;
         this.email = email;
     }
-
-    private List<MenuItemDto> menu;
-    private String mobile;
-    private String email;
 
     public String getAddress() {
         return address;
@@ -78,5 +68,17 @@ public class RestaurantDto {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "RestaurantDto{" +
+                "restaurantId=" + restaurantId +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", menu=" + menu +
+                ", mobile='" + mobile + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }

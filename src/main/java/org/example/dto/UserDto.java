@@ -7,16 +7,10 @@ public class UserDto {
     Long userId;
     String firstName;
     String lastName;
+    String mobile;
+    String email;
 
-    @Override
-    public String toString() {
-        return "UserDto{" +
-                "userId=" + userId +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", mobile='" + mobile + '\'' +
-                ", email='" + email + '\'' +
-                '}';
+    public UserDto() {
     }
 
     public UserDto(Long userId, String firstName, String lastName, String mobile, String email) {
@@ -26,9 +20,6 @@ public class UserDto {
         this.mobile = mobile;
         this.email = email;
     }
-
-    String mobile;
-    String email;
 
     public Long getUserId() {
         return userId;
@@ -68,6 +59,17 @@ public class UserDto {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    @Override
+    public String toString() {
+        return "UserDto{" +
+                "userId=" + userId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", email='" + email + '\'' +
+                '}';
     }
 }
 

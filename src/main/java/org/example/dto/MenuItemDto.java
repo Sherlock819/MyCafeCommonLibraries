@@ -9,6 +9,10 @@ public class MenuItemDto {
     private Double price;
     private LocalDateTime preparationTime;
 
+
+    public MenuItemDto() {
+    }
+
     public MenuItemDto(Long itemId, String name, String description, Double price, LocalDateTime preparationTime) {
         this.itemId = itemId;
         this.name = name;
