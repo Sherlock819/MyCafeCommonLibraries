@@ -1,10 +1,13 @@
 package org.example.dto;
 
+import java.time.LocalDateTime;
+
 public class MenuItemDto {
-    private Long id;
+    private Long itemId;
     private String name;
     private String description;
     private Double price;
+    private LocalDateTime preparationTime;
 
     public Double getPrice() {
         return price;
@@ -30,11 +33,20 @@ public class MenuItemDto {
         this.name = name;
     }
 
-    public Long getId() {
-        return id;
+    public Long getItemId() {
+        return itemId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setItemId(Long itemId) {
+        this.itemId = itemId;
+    }
+
+
+    public LocalDateTime getPreparationTime() {
+        return preparationTime;
+    }
+
+    public void setPreparationTime(LocalDateTime preparationTime) {
+        this.preparationTime = preparationTime;
     }
 }

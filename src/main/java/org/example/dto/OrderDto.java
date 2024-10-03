@@ -7,7 +7,7 @@ import java.util.List;
 
 public class OrderDto {
 
-    private Long id;
+    private Long orderiId;
     private Long userId;
     private Long restaurantId;
     private List<MenuItemDto> items;
@@ -17,12 +17,12 @@ public class OrderDto {
     private OrderStatus status;
 
 
-    public Long getId() {
-        return id;
+    public Long getOrderiId() {
+        return orderiId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setOrderiId(Long orderiId) {
+        this.orderiId = orderiId;
     }
 
     public Long getUserId() {

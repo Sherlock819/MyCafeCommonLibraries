@@ -3,10 +3,12 @@ package org.example.dto;
 import java.util.List;
 
 public class RestaurantDto {
-    private Long id;
+    private Long restaurantId;
     private String name;
     private String address;
     private List<MenuItemDto> menu;
+    private String mobile;
+    private String email;
 
     public String getAddress() {
         return address;
@@ -32,11 +34,27 @@ public class RestaurantDto {
         this.name = name;
     }
 
-    public Long getId() {
-        return id;
+    public Long getRestaurantId() {
+        return restaurantId;
     }
 
-    public void setId(Long id) {
-        this.id = id;
+    public void setRestaurantId(Long restaurantId) {
+        this.restaurantId = restaurantId;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
