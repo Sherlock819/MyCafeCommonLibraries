@@ -1,6 +1,7 @@
 package org.example.utils;
 
 
+import java.time.Duration;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -29,5 +30,31 @@ public class Validator {
         Pattern pat = Pattern.compile(emailRegex);
         if (email == null) return false;
         return pat.matcher(email).matches();
+    }
+
+    public static boolean isValidPrice(Double price) {
+        // Check if price is null
+        if (price == null) {
+            return false; // Invalid if price is null
+        }
+        // Check if price is greater than zero
+        return price > 0;
+    }
+
+    public static boolean isValidAveragePreparationTime(Duration averageTime) {
+        // Check if averageTime is null
+        if (averageTime == null) {
+            return false; // Invalid if averageTime is null
+        }
+
+        // Check if averageTime is negative
+        if (averageTime.isNegative()) {
+            return false; // Invalid if averageTime is negative
+        }
+
+        // Optional: Define a maximum allowed average time (e.g., 2 hours)
+        Duration maxAllowedTime = Duration.ofHours(2);
+        ;
+        return averageTime.compareTo(maxAllowedTime) <= 0; // Valid if it's not greater than max allowed
     }
 }
