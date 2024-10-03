@@ -9,10 +9,37 @@ public class OrderDto {
 
     private Long orderiId;
     private Long userId;
+
+    @Override
+    public String toString() {
+        return "OrderDto{" +
+                "orderiId=" + orderiId +
+                ", userId=" + userId +
+                ", restaurantId=" + restaurantId +
+                ", items=" + items +
+                ", totalAmount=" + totalAmount +
+                ", address='" + address + '\'' +
+                ", orderTime=" + orderTime +
+                ", status=" + status +
+                '}';
+    }
+
     private Long restaurantId;
     private List<MenuItemDto> items;
     private Double totalAmount;
     private String address;
+
+    public OrderDto(Long orderiId, Long userId, Long restaurantId, List<MenuItemDto> items, Double totalAmount, String address, LocalDateTime orderTime, OrderStatus status) {
+        this.orderiId = orderiId;
+        this.userId = userId;
+        this.restaurantId = restaurantId;
+        this.items = items;
+        this.totalAmount = totalAmount;
+        this.address = address;
+        this.orderTime = orderTime;
+        this.status = status;
+    }
+
     private LocalDateTime orderTime;
     private OrderStatus status;
 

@@ -6,6 +6,28 @@ public class RestaurantDto {
     private Long restaurantId;
     private String name;
     private String address;
+
+    @Override
+    public String toString() {
+        return "RestaurantDto{" +
+                "restaurantId=" + restaurantId +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", menu=" + menu +
+                ", mobile='" + mobile + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
+    public RestaurantDto(Long restaurantId, String name, String address, List<MenuItemDto> menu, String mobile, String email) {
+        this.restaurantId = restaurantId;
+        this.name = name;
+        this.address = address;
+        this.menu = menu;
+        this.mobile = mobile;
+        this.email = email;
+    }
+
     private List<MenuItemDto> menu;
     private String mobile;
     private String email;

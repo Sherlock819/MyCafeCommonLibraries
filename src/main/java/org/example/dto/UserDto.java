@@ -7,6 +7,26 @@ public class UserDto {
     Long userId;
     String firstName;
     String lastName;
+
+    @Override
+    public String toString() {
+        return "UserDto{" +
+                "userId=" + userId +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", mobile='" + mobile + '\'' +
+                ", email='" + email + '\'' +
+                '}';
+    }
+
+    public UserDto(Long userId, String firstName, String lastName, String mobile, String email) {
+        this.userId = userId;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.mobile = mobile;
+        this.email = email;
+    }
+
     String mobile;
     String email;
 
