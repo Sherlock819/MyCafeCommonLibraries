@@ -19,6 +19,13 @@ public class MenuItemDto {
         this.restaurantId = restaurantId;
     }
 
+    public MenuItemDto(String name, String description, Double price, Duration preparationTime) {
+        this.name = name;
+        this.description = description;
+        this.price = price;
+        this.preparationTime = preparationTime;
+    }
+
 
     public MenuItemDto() {
     }

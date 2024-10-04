@@ -26,7 +26,6 @@ public class MenuGenerator {
 
     private static final Random random = new Random();
     private static Long idCounter = 1L; // Static counter for itemId
-    private static Long restaurantIdCounter = 1L; // Static counter for restaurantId (for demonstration)
 
     public static MenuItemDto generateRandomMenuItemDto() {
         String name = NAMES[random.nextInt(NAMES.length)];
@@ -34,10 +33,9 @@ public class MenuGenerator {
         Double price = Math.round((10 + (50 - 10) * random.nextDouble()) * 100.0) / 100.0; // Random price between 10.00 and 50.00
         Duration preparationTime = Duration.ofMinutes(random.nextInt(61)); // Random preparation time up to 60 minutes
 
-        Long restaurantId = restaurantIdCounter++; // Assign a unique restaurant ID for each item (for demonstration)
         Long menuItemId = idCounter++; // Assign a unique restaurant ID for each item (for demonstration)
 
-        return new MenuItemDto(menuItemId, name, description, price, preparationTime, restaurantId); // Use idCounter for itemId
+        return new MenuItemDto(name, description, price, preparationTime); // Use idCounter for itemId
     }
 
     public static List<MenuItemDto> generateMenu(int numberOfItems) {
